@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/app.Dockerfile
     ports:
-      - '3000:3000'
+      - '3010:3010'
     deploy:
       resources:
         limits:
@@ -28,7 +28,7 @@ services:
       realtime:
         condition: service_healthy
     healthcheck:
-      test: ['CMD', 'wget', '--spider', '--quiet', 'http://127.0.0.1:3000']
+      test: ['CMD', 'wget', '--spider', '--quiet', 'http://127.0.0.1:3010']
       interval: 90s
       timeout: 5s
       retries: 3
